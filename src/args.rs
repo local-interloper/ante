@@ -4,8 +4,7 @@ use clap::Parser;
 #[derive(Parser, Debug)]
 #[command(author = "DigitalCyan", version = "1.0.0", about = "Advanced Navigational Text Explorer")]
 pub struct Args {
-    
-    /// The path to the folder from which we began the recursive search
+    /// The path to the folder from which we begin the recursive search
     #[arg()]
     pub path: String,
 
@@ -16,4 +15,12 @@ pub struct Args {
     /// A RegEx to look for
     #[arg(short, long)]
     pub regex: Option<String>,
+    
+    /// Only print paths to files that match the criteria
+    #[arg(short, long)]
+    pub paths_only: bool,
+    
+    /// Max file size
+    #[arg(short, long)]
+    pub max_file_size: Option<u64>
 }
